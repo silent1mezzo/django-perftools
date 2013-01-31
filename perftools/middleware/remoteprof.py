@@ -25,6 +25,7 @@ class RemoteProfilingMiddleware(Base):
         self.outpath = outpath
         self.threshold = threshold
         self.hostname = socket.gethostname()
+        self.reqnum = 0
         super(RemoteProfilingMiddleware, self).__init__(application, **kwargs)
 
     def __call__(self, environ, start_response):
